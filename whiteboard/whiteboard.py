@@ -26,7 +26,7 @@ def addLine(work):
 
     global current_x , current_y
 
-    canvas.create_line((current_x, current_y, work.x, work.y), width=get_current_value(), fill=color, cacpstyle=ROUND, smooth=True)
+    canvas.create_line((current_x, current_y, work.x, work.y), width=get_current_value(), fill=color, capstyle=ROUND, smooth=True)
     current_x, current_y = work.x , work.y
 
 def show_color(new_color):
