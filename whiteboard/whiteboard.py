@@ -24,7 +24,20 @@ def locate_xy(work):
 
 def addLine(work):
 
+    global current_x , current_y
+
     canvas.create_line((current_x, current_y, work.x, work.y), width=2,fill=color)
+    current_x, current_y = work.x , work.y
+
+def show_color(new_color):
+    global color
+
+    color = new_color
+
+def new_canvas():
+
+    canvas.delete('all')
+    display_pallete()
 
 #icon
 image_icon= PhotoImage(file="logo.png")
@@ -34,7 +47,7 @@ color_box=PhotoImage(file="color section.png")
 Label(root,image=color_box,bg="#f2f3f5").place(x=10,y=20)
 
 eraser=PhotoImage(file="eraser.png")
-Button(root, image=eraser, bg="#f2f3f5").place(x=30,y=400)
+Button(root, image=eraser, bg="#f2f3f5", command=new_canvas).place(x=30,y=400)
 
 colors=Canvas(root,bg="#ffffff",width=37,height=300,bd=0)
 colors.place(x=30,y=60)
